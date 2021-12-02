@@ -2066,7 +2066,7 @@ var listOrdenes = document.getElementById('listado-ordenes');
 window.Echo.channel('orders').listen('OrderStatusUpdated', function (e) {
   console.log(e);
   var li = document.createElement("li");
-  li.appendChild(document.createTextNode(e.order.id + e.order.product));
+  li.appendChild(document.createTextNode("".concat(e.order.id, " - ").concat(e.order.product, " ")));
   listOrdenes.appendChild(li);
 });
 

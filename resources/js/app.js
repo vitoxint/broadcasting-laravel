@@ -11,6 +11,6 @@ window.Echo.channel('orders')
     console.log(e);
 
     var li = document.createElement("li");
-    li.appendChild( document .createTextNode(e.order.id + e.order.product));
+    li.appendChild( document .createTextNode(`${e.order.id} - ${e.order.product} `));
     listOrdenes.appendChild( li );
 });
