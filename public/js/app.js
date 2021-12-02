@@ -2063,11 +2063,18 @@ module.exports = {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var listOrdenes = document.getElementById('listado-ordenes');
+var listAlumnos = document.getElementById('listado-alumnos');
 window.Echo.channel('orders').listen('OrderStatusUpdated', function (e) {
   console.log(e);
   var li = document.createElement("li");
   li.appendChild(document.createTextNode("".concat(e.order.id, " - ").concat(e.order.product, " ")));
   listOrdenes.appendChild(li);
+});
+window.Echo.channel('alumnos').listen('AlumnoStatusUpdated', function (e) {
+  console.log(e);
+  var li = document.createElement("li");
+  li.appendChild(document.createTextNode("".concat(e.alumno.rut, " - ").concat(e.alumno.nombres, " ")));
+  listAlumnos.appendChild(li);
 });
 
 /***/ }),

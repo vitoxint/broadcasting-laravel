@@ -1,6 +1,8 @@
 <?php
 
+use Freshwork\ChileanBundle\Rut;
 use App\Events\OrderStatusUpdated;
+use App\Events\AlumnoStatusUpdated;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +27,18 @@ class Order {
     }
 }
 
+
+class Alumno {
+    public $rut;
+    public $nombres;
+
+    public function __construct($rut , $nombres ){
+
+        $this->rut = $rut;
+        $this->nombres = $nombres;
+    }
+}
+
 Route::get('/', function () {
     
     return view('welcome');
@@ -32,6 +46,16 @@ Route::get('/', function () {
 
 // ocupar faker
 Route::get('update', function () {
+
     OrderStatusUpdated::dispatch( new Order(rand() , 'PS5'));
+
+
+    $random_rut = rand(1000000, 25000000);
+    $rut = new Rut($random_rut);
+
+    $faker = Faker\Factory::create('es_ES');
+    
+    AlumnoStatusUpdated::dispatch( new Alumno($rut->fix()->format() , $faker->name));
+
     return view('welcome');
 });

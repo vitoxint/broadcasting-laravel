@@ -52,6 +52,12 @@
                     <li>136 - Xbox One</li>
                 </ul>
 
+                <h3>Listado de Alumnos</h3>
+
+                <ul id="listado-alumnos">
+                    <li>15275554 - Juan Pérez</li>
+                </ul>
+
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="p-6">
