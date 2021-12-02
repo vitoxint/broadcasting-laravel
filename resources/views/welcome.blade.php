@@ -48,7 +48,7 @@
 
                 <h3>Listado de Ordenes</h3>
 
-                <ul>
+                <ul id="listado-ordenes">
                     <li>136 - Xbox One</li>
                 </ul>
 
